@@ -28,6 +28,16 @@ Route::group(['namespace'=> 'Admin', 'prefix' => 'admin', 'middleware' => ['auth
         Route::get('/', [App\Http\Controllers\Admin\Post\IndexController::class, '__invoke'])->name('admin.post.index');
     });
 
+    Route::group(['namespace' => 'Ads', 'prefix'=>'ads'], function() {
+        Route::get('/', [App\Http\Controllers\Admin\Advertisement\IndexController::class, '__invoke'])->name('admin.ads.index');
+        Route::get('/create', [App\Http\Controllers\Admin\Advertisement\CreateController::class, '__invoke'])->name('admin.ads.create');
+        Route::post('/', [App\Http\Controllers\Admin\Advertisement\StoreController::class, '__invoke'])->name('admin.ads.store');
+        Route::get('/{post}', [App\Http\Controllers\Admin\Advertisement\ShowController::class, '__invoke'])->name('admin.ads.show');
+        Route::get('/{post}/edit', [App\Http\Controllers\Admin\Advertisement\EditController::class, '__invoke'])->name('admin.ads.edit');
+        Route::patch('/{post}', [App\Http\Controllers\Admin\Advertisement\UpdateController::class, '__invoke'])->name('admin.ads.update');
+        Route::delete('/{post}', [App\Http\Controllers\Admin\Advertisement\DeleteController::class, '__invoke'])->name('admin.ads.delete');
+    });
+
     Route::group(['namespace' => 'Post', 'prefix'=>'posts'], function() {
         Route::get('/', [App\Http\Controllers\Admin\Post\IndexController::class, '__invoke'])->name('admin.post.index');
         Route::get('/create', [App\Http\Controllers\Admin\Post\CreateController::class, '__invoke'])->name('admin.post.create');

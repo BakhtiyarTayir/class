@@ -38,6 +38,15 @@
 
                 <li class="nav-header">EXAMPLES</li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.ads.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-address-book"></i>
+                        <p>
+                            Ads
+                            <span class="badge badge-info right"></span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.user.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>

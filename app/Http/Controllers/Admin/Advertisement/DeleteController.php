@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Post;
+namespace App\Http\Controllers\Admin\Advertisement;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
